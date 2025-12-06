@@ -1,1 +1,31 @@
+/* ====BODY==== */
+body{
+    background-color: black;
+}
+
+#copywrite{
+    position:fixed;
+    bottom: 20px;
+    color: white;
+}
+
+/* ====TEXT==== */
+body{
+    text-align: center;
+    font-family: Segoe UI, 'Tahoma', Geneva, Verdana, sans-serif;
+    padding: 50px;
+    color: white;
+}
+
+#construction{
+    padding-top: 10%;
+    color: yellow;
+    text-align: center;
+}
+
+/* ====IMAGES==== */
+#ig_brand{
+    height: 30px;
+    width: 30px;
+}
 
