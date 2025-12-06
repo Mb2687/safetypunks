@@ -1,8 +1,3 @@
-/* ====BODY==== */
-body{
-    background-color: black;
-}
-
 #copywrite{
     position:fixed;
     bottom: 20px;
@@ -11,6 +6,7 @@ body{
 
 /* ====TEXT==== */
 body{
+    background-color: black;
     text-align: center;
     font-family: Segoe UI, 'Tahoma', Geneva, Verdana, sans-serif;
     padding: 50px;
