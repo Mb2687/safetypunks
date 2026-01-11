@@ -1,7 +1,8 @@
 {
-  "name": "",
+  "name": "safetypunks-website",
   "type": "module",
   "version": "0.0.1",
+  "description": "SafetyPunks - Safety intel, field stories, and industry signals",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

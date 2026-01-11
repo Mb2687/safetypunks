@@ -1,0 +1,128 @@
+---
+---
+<header class="site-header">
+    <div class="header-inner">
+        <a class="header-brand" href="/" aria-label="SafetyPunks home">
+            <img src="/safetypunkslogo.png" alt="SafetyPunks" class="logo" />
+            <span class="brand-name">SafetyPunks</span>
+        </a>
+        <nav class="header-nav">
+            <a href="/regulations">Regulations</a>
+            <a href="/jhas">JHAs</a>
+            <a href="/training">Training</a>
+            <a href="/vendors">Gear</a>
+            <a href="/bands">Culture</a>
+            <a href="/about">About</a>
+        </nav>
+    </div>
+</header>
+
+<style>
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background-color: var(--header-bg);
+        box-shadow: var(--shadow-soft);
+    }
+
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        height: var(--header-height);
+    }
+
+    .header-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .header-brand:focus {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
+    }
+
+    .logo {
+        height: 40px;
+        width: 40px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    .brand-name {
+        font-family: "Georgia", "Palatino Linotype", "Book Antiqua", serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--accent);
+        letter-spacing: 0.04em;
+    }
+
+    .header-nav {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .header-nav a {
+        color: var(--ink);
+        text-decoration: none;
+        font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        transition: color 0.2s ease;
+        padding: 0.5rem 0;
+    }
+
+    .header-nav a:hover {
+        color: var(--accent);
+    }
+
+    .header-nav a:focus {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
+    }
+
+    @media (max-width: 980px) {
+        .header-inner {
+            flex-direction: column;
+            align-items: flex-start;
+            height: auto;
+            padding: 1rem 1.5rem;
+            gap: 1rem;
+        }
+
+        .header-nav {
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .header-inner {
+            padding: 0.75rem 1rem;
+        }
+
+        .header-nav {
+            gap: 1rem;
+            font-size: 13px;
+        }
+
+        .brand-name {
+            font-size: 18px;
+        }
+
+        .logo {
+            height: 36px;
+            width: 36px;
+        }
+    }
+</style>

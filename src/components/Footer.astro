@@ -1,0 +1,82 @@
+---
+---
+<div class="footer-container">
+    <div class="footer-copyright">
+        <span class="footer-title">SafetyPunks</span>
+        <span class="footer-tagline">Safety for the bold and the stubborn.</span>
+    </div>
+    <nav class="footer-links">
+        <a href="/about">About</a>
+        <a href="/privacy-policy">Privacy</a>
+        <a href="/terms-of-service">Terms</a>
+        <a href="/contact">Contact</a>
+    </nav>
+</div>
+
+<style>
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .footer-copyright {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .footer-title {
+        font-family: "Georgia", "Palatino Linotype", "Book Antiqua", serif;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+    }
+
+    .footer-tagline {
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .footer-links a {
+        color: var(--ink);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+        color: var(--accent);
+    }
+
+    .footer-links a:focus {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
+    }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .footer-links {
+            gap: 1rem;
+        }
+    }
+</style>

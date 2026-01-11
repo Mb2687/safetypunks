@@ -1,23 +1,216 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import RedesignedLayout from '../layouts/RedesignedLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ArticleCard from '../components/ArticleCard.astro';
 ---
 
-<Layout>
-	<main class="home">
-		<header class="hero">
-			<img
-				src="/safetypunkslogo.png"
-				alt="SafetyPunks logo"
-				class="logo"
-				width="320"
-				height="320"
-				loading="eager"
-			/>
-			<h1>SafetyPunks</h1>
-			<p class="mission">
-				Our core mission is to build a bold, inclusive safety culture that empowers
-				people, teams, and communities to protect each other and ship resilient work.
-			</p>
-		</header>
-	</main>
-</Layout>
+<RedesignedLayout>
+    <div slot="header">
+        <Header />
+    </div>
+
+    <section class="feed-header">
+        <h1 class="section-title">Latest Dispatches</h1>
+        <p class="section-lede">
+            Daily safety news, field notes, and signals you can use before the next shift starts.
+        </p>
+    </section>
+    <div class="article-feed">
+        <ArticleCard
+            title="Interpreted Regulations"
+            href="/regulations"
+            body="Professional, interpreted safety rules and OSHA standards. CIH/CSP verified deep-dive content."
+            imageUrl="/safetypunkslogo.png"
+            kicker="Regulations"
+            meta="Updated 2 hours ago"
+        />
+        <ArticleCard
+            title="Job Hazard Analysis"
+            href="/jhas"
+            body="Comprehensive JHA templates and real-world case studies for field safety."
+            imageUrl="/safetypunkslogo.png"
+            kicker="Field Guides"
+            meta="Today · 12 min read"
+        />
+        <ArticleCard
+            title="Music & Culture"
+            href="/bands"
+            body="Discover hardcore, punk, and metal music. Playlists and album news for the grind."
+            imageUrl="/safetypunkslogo.png"
+            kicker="Culture"
+            meta="This week · Playlist update"
+        />
+        <ArticleCard
+            title="Vendor Directory"
+            href="/vendors"
+            body="Recommended safety gear, equipment, PPE, and professional services."
+            imageUrl="/safetypunkslogo.png"
+            kicker="Gear"
+            meta="Updated monthly"
+        />
+    </div>
+
+    <div slot="sidebar">
+        <div class="sidebar-card">
+            <h3>About Us</h3>
+            <p>
+                Building a bold, inclusive safety culture that empowers people, teams,
+                and communities to protect each other and ship resilient work.
+            </p>
+        </div>
+        <div class="sidebar-card">
+            <h3>Popular This Week</h3>
+            <ul>
+                <li><a href="/regulations">OSHA updates you need before Q2</a></li>
+                <li><a href="/jhas">JHA starter kit for field crews</a></li>
+                <li><a href="/vendors">Top-rated PPE vendors for 2024</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-card">
+            <h3>Topics</h3>
+            <div class="tag-row">
+                <a href="/regulations">Compliance</a>
+                <a href="/training">Training</a>
+                <a href="/vendors">PPE</a>
+                <a href="/jhas">JHA</a>
+            </div>
+        </div>
+        <div class="sidebar-card">
+            <h3>Newsletter</h3>
+            <p>One sharp dispatch every Friday. No fluff, just what crews need.</p>
+            <a class="cta" href="/subscribe">Join the list</a>
+        </div>
+    </div>
+
+    <div slot="footer">
+        <Footer />
+    </div>
+</RedesignedLayout>
+
+<style>
+    .feed-header {
+        padding: 0 0 2rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-title {
+        margin-bottom: 0.5rem;
+        font-size: 2.5rem;
+        color: var(--ink);
+    }
+
+    .section-lede {
+        margin: 0;
+        color: var(--muted);
+        max-width: 640px;
+        font-size: 1.125rem;
+        line-height: 1.6;
+    }
+
+    .article-feed {
+        display: block;
+    }
+
+    .sidebar-card {
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        margin-bottom: var(--widget-gap);
+    }
+
+    .sidebar-card h3 {
+        margin: 0 0 0.5rem 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--accent);
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--ink);
+    }
+
+    .sidebar-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.75rem;
+    }
+
+    .sidebar-card li a {
+        color: var(--ink);
+        transition: color 0.2s ease;
+    }
+
+    .sidebar-card li a:hover {
+        color: var(--accent);
+    }
+
+    .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .tag-row a {
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        border: 1px solid var(--border-color);
+        background: transparent;
+        color: var(--ink);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.2s ease;
+    }
+
+    .tag-row a:hover {
+        background: var(--surface-alt);
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+
+    .tag-row a:focus {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+    }
+
+    .cta {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        background: var(--accent);
+        color: var(--paper);
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        transition: all 0.2s ease;
+        text-decoration: none;
+    }
+
+    .cta:hover {
+        background: var(--accent-dark);
+        color: var(--paper);
+    }
+
+    .cta:focus {
+        outline: 2px solid var(--ink);
+        outline-offset: 2px;
+    }
+
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .section-lede {
+            font-size: 1rem;
+        }
+    }
+</style>

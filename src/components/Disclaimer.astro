@@ -1,0 +1,97 @@
+---
+// src/components/Disclaimer.astro
+// Anonymous CIH/CSP Disclaimer
+---
+
+<div class="disclaimer">
+  <div class="disclaimer-header">
+    <span class="badge">CIH</span>
+    <span class="separator">•</span>
+    <span class="badge">CSP</span>
+  </div>
+  <p class="disclaimer-content">
+    Content on <strong>SafetyPunks.com</strong> is curated by a Certified Industrial Hygienist (CIH) 
+    and Certified Safety Professional (CSP).
+  </p>
+  <p class="disclaimer-legal">
+    <strong>⚠️ DISCLAIMER:</strong> All information provided on this website is for informational 
+    purposes only and does not constitute professional safety advice. Always consult with a 
+    qualified professional for your specific needs.
+  </p>
+</div>
+
+<style>
+  .disclaimer {
+    border: 3px solid var(--accent);
+    background: rgba(255, 215, 0, 0.05);
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+  }
+
+  .disclaimer-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .badge {
+    background: var(--accent);
+    color: var(--paper);
+    padding: 0.4rem 0.9rem;
+    border: 2px solid var(--paper);
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .separator {
+    color: var(--accent);
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .disclaimer-content {
+    margin: 0 0 1rem;
+    color: var(--ink);
+  }
+
+  .disclaimer-content strong {
+    color: var(--accent);
+  }
+
+  .disclaimer-legal {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--ink);
+    padding-top: 1rem;
+  }
+
+  .disclaimer-legal strong {
+    color: var(--accent);
+    font-weight: 900;
+  }
+
+  @media (max-width: 768px) {
+    .disclaimer {
+      padding: 1.25rem;
+      font-size: 0.85rem;
+    }
+
+    .badge {
+      font-size: 0.9rem;
+      padding: 0.35rem 0.75rem;
+    }
+
+    .disclaimer-legal {
+      font-size: 0.8rem;
+    }
+  }
+</style>

@@ -1,0 +1,204 @@
+---
+// src/components/SidePanel.astro
+// The Hub: RSS feeds, Music/Bands, and Vendor links
+---
+
+<div class="panel-content">
+  <!-- Branding with SafetyPunks Logo -->
+  <div class="brand-section">
+    <a class="brand-link" href="/" aria-label="SafetyPunks home">
+      <img
+        src="/safetypunkslogo.png"
+        alt="SafetyPunks logo"
+        class="logo"
+        loading="eager"
+      />
+      <span class="brand-name">SafetyPunks</span>
+    </a>
+    <p class="tagline">Hardcore safety culture. Zero fluff.</p>
+  </div>
+
+  <!-- The Hub Sections -->
+  <div class="hub-container">
+    <h2 class="hub-title">The Hub</h2>
+    
+    <div class="hub-section">
+      <h3>📡 RSS Feeds</h3>
+      <p>Latest safety news, industry updates, and regulatory changes.</p>
+      <ul class="hub-links">
+        <li><a href="/regulations">OSHA Updates</a></li>
+        <li><a href="/regulations">Industry News</a></li>
+        <li><a href="/regulations">Safety Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="hub-section">
+      <h3>🎸 Music & Bands</h3>
+      <p>Discover hardcore, punk, and metal music. Playlists and album news.</p>
+      <ul class="hub-links">
+        <li><a href="/bands">Featured Bands</a></li>
+        <li><a href="/bands">Work Playlists</a></li>
+        <li><a href="/bands">New Releases</a></li>
+      </ul>
+    </div>
+
+    <div class="hub-section">
+      <h3>🛠️ Vendor Links</h3>
+      <p>Recommended safety gear, equipment, and services.</p>
+      <ul class="hub-links">
+        <li><a href="/vendors">Equipment Vendors</a></li>
+        <li><a href="/vendors">PPE Suppliers</a></li>
+        <li><a href="/training">Training Services</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .panel-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--widget-gap);
+    height: 100%;
+  }
+
+  /* Branding Section */
+  .brand-section {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: var(--widget-gap);
+  }
+
+  .brand-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--ink);
+    transition: opacity 0.2s ease;
+  }
+
+  .brand-link:hover {
+    opacity: 0.9;
+  }
+
+  .brand-link:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+
+  .brand-name {
+    font-family: "Georgia", "Palatino Linotype", "Book Antiqua", serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin: 0;
+  }
+
+  .tagline {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0.5rem 0 0;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  /* Hub Container */
+  .hub-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--widget-gap);
+  }
+
+  .hub-title {
+    display: none;
+  }
+
+  /* Hub Sections */
+  .hub-section {
+    padding: 1.5rem;
+    background: var(--surface);
+    border-radius: var(--radius);
+    transition: all 0.2s ease;
+  }
+
+  .hub-section h3 {
+    margin: 0 0 0.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+  }
+
+  .hub-section p {
+    margin: 0 0 1rem;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  /* Hub Links */
+  .hub-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hub-links li {
+    padding-left: 1.25rem;
+    position: relative;
+    font-size: 14px;
+  }
+
+  .hub-links li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+  }
+
+  .hub-links a {
+    color: var(--ink);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .hub-links a:hover {
+    color: var(--accent);
+  }
+
+  .hub-links a:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* Mobile Adjustments */
+  @media (max-width: 1023px) {
+    .brand-section {
+      padding: 1.25rem;
+    }
+
+    .hub-section {
+      padding: 1.25rem;
+    }
+  }
+</style>
