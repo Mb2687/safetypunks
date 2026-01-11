@@ -1,9 +1,10 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-import cloudflare from '@astrojs/cloudflare';
-
 // https://astro.build/config
+// GitHub Pages deployment configuration
 export default defineConfig({
-  adapter: cloudflare()
+  site: 'https://mb2687.github.io',
+  base: '/safetypunks',
+  output: 'static',
 });
